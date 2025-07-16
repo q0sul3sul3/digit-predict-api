@@ -1,7 +1,7 @@
 from fastapi import FastAPI, File, UploadFile
 from PIL import Image
 
-from app.model import predict_digit
+from .model import predict_digit
 
 app = FastAPI()
 

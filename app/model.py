@@ -1,11 +1,15 @@
+import os
+
 import torch
 from PIL import Image
 from torchvision import transforms
 
 from app.cnn_model import CNNTransformer
 
+base_dir = os.path.dirname(__file__)
+model_path = os.path.join(base_dir, 'model_weights.pth')
 model = CNNTransformer()
-model.load_state_dict(torch.load('model_weights.pth', map_location=torch.device('cpu')))
+model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 model.eval()
 
 # 預處理轉換
